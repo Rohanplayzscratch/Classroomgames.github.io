@@ -1,147 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classroom Games</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f8fb;
-      color: #333;
-      text-align: center;
-      margin: 0;
-      padding: 50px;
-    }
 
-    header {
-      background: #2c7be5;
-      color: white;
-      padding: 30px;
-      border-radius: 10px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    h1 {
-      margin: 0;
-    }
+<title>Classroom Games</title>
 
-    .content {
-      max-width: 700px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    footer {
-      margin-top: 40px;
-      color: #666;
-      font-size: 0.9em;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    a {
-      color: #2c7be5;
-      text-decoration: none;
-      font-weight: bold;
-    }
+<style>
 
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Space Grotesk',sans-serif;
+background:#020617;
+color:white;
+overflow-x:hidden;
+
+}
+
+/* ---------- Animated Stars ---------- */
+
+body::before{
+
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(white 1px, transparent 1px),
+radial-gradient(#8ab4ff 1px, transparent 1px),
+radial-gradient(white 2px, transparent 2px);
+
+background-size:
+120px 120px,
+180px 180px,
+250px 250px;
+
+background-position:
+0 0,
+40px 60px,
+100px 140px;
+
+opacity:.45;
+
+z-index:-2;
+
+animation:stars 180s linear infinite;
+
+}
+
+@keyframes stars{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-600px);
+
+}
+
+}
+
+/* ---------- Navigation ---------- */
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+padding:22px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:rgba(0,0,0,.35);
+
+backdrop-filter:blur(14px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+z-index:100;
+
+}
+
+.logo{
+
+font-size:28px;
+font-weight:700;
+letter-spacing:2px;
+
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+gap:40px;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#5ab0ff;
+
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:40px;
+
+background:
+
+radial-gradient(circle at top,#163d7a 0%,transparent 45%),
+linear-gradient(#020617,#000814);
+
+}
+
+.hero-content{
+
+max-width:850px;
+
+}
+
+.hero h1{
+
+font-size:72px;
+
+font-weight:700;
+
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#d7e3ff;
+
+margin-bottom:45px;
+
+}
+
+.buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:18px 40px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.primary{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+.primary:hover{
+
+background:#3b82f6;
+
+transform:translateY(-4px);
+
+}
+
+.secondary{
+
+border:2px solid #2563eb;
+
+color:white;
+
+}
+
+.secondary:hover{
+
+background:#2563eb;
+
+transform:translateY(-4px);
+
+}
+
+/* ---------- Scroll Indicator ---------- */
+
+.scroll{
+
+position:absolute;
+
+bottom:30px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:14px;
+
+color:#8aa7d6;
+
+letter-spacing:3px;
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-<header>
-  <h1>Classroom Games</h1>
-  <p>More Fun Games coming soon....</p>
-</header>
+<nav>
 
-<div class="content">
-  <h2>Welcome!</h2>
-  <p>
-    This website is dedicated to Games made by students to be played by students
-  </p>
+<div class="logo">
 
-  <p>
-    <a href="#">Coming Soon: A 3d game</a>
-  </p>
+CLASSROOM GAMES
+
 </div>
 
-<footer>
-  &copy; 2026 Classroom Games
-</footer>
+<ul>
 
-</html>
+<li><a href="#">Home</a></li>
 
-<a href="Lemonoid Invasion (From Scratch).html">Lemonoid Invasion 1</a>
+<li><a href="#">Games</a></li>
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Classroom Games</title>
-<style>
-body {
-  font-family: Arial;
-  background: #f2f7ff;
-  text-align: center;
-}
+<li><a href="#">Developers</a></li>
 
-.game-card {
-  background: white;
-  width: 300px;
-  margin: 30px auto;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px #ccc;
-}
+<li><a href="#">Submit</a></li>
 
-.game-card img {
-  width: 100%;
-  border-radius: 10px;
-}
+<li><a href="#">About</a></li>
 
-button {
-  background: #2878ff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-}
+</ul>
 
-button:hover {
-  background: #1255c7;
-}
-</style>
-</head>
+</nav>
 
-<body>
+<section class="hero">
 
-<h1>Games</h1>
-<p>Fun educational games made by students.</p>
+<div class="hero-content">
 
+<h1>
 
-<div class="game-card">
+Student Games.<br>
 
-<img src="images/math-preview.png">
+Built for Everyone.
 
-<h2>Lemonoid Invasion</h2>
+</h1>
 
 <p>
-A fast-paced 2d shooter game where the main objective is to shoot at lemons in space.
+
+Classroom Games is a community where students can publish educational and creative games built with HTML, JavaScript, Scratch, and other web technologies. Discover new games, learn from other creators, and share your own projects with players around the world.
+
 </p>
 
-<p>
-Created by: Rohan_Playz_Scratch
-</p>
+<div class="buttons">
 
-<a href="games/Lemonoid Invasion (From Scratch).html">
-<button>View Game</button>
+<a href="#" class="btn primary">
+
+Browse Games
+
+</a>
+
+<a href="#" class="btn secondary">
+
+Submit a Game
+
 </a>
 
 </div>
 
+</div>
+
+<div class="scroll">
+
+SCROLL
+
+</div>
+
+</section>
 
 </body>
+
 </html>
+
+<!-- ===========================
+FEATURED GAMES
+============================ -->
+
+<style>
+
+.games-section{
+
+padding:100px 10%;
+
+background:linear-gradient(to bottom,#000814,#07142b);
+
+}
+
+.section-title{
+
+font-size:42px;
+
+margin-bottom:10px;
+
+}
+
+.section-subtitle{
+
+color:#9db5d9;
+
+margin-bottom:50px;
+
+font-size:18px;
+
+}
+
+.games-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+gap:40px;
+
+}
+
+.game-card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+overflow:hidden;
+
+backdrop-filter:blur(12px);
+
+transition:.35s;
+
+box-shadow:0 0 30px rgba(0,80,255,.08);
+
+}
+
+.game-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 0 40px rgba(70,140,255,.4);
+
+border-color:#4da3ff;
+
+}
+
+.game-image{
+
+height:220px;
+
+background:linear-gradient(135deg,#14305f,#08111f);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:26px;
+
+color:#8fb9ff;
+
+letter-spacing:2px;
+
+}
+
+.game-content{
+
+padding:25px;
+
+}
+
+.game-title{
+
+font-size:32px;
+
+margin-bottom:15px;
+
+}
+
+.game-description{
+
+line-height:1.8;
+
+color:#cdd9ee;
+
+margin-bottom:25px;
+
+}
+
+.info{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+margin-bottom:25px;
+
+}
+
+.info-box{
+
+background:rgba(255,255,255,.04);
+
+padding:12px;
+
+border-radius:12px;
+
+}
+
+.label{
+
+font-size:13px;
+
+color:#82a5d5;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+margin-bottom:5px;
+
+}
+
+.value{
+
+font-size:16px;
+
+}
+
+.play-button{
+
+display:inline-block;
+
+padding:15px 35px;
+
+background:#2563eb;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:10px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.play-button:hover{
+
+background:#3b82f6;
+
+}
+
+.badge{
+
+display:inline-block;
+
+padding:8px 14px;
+
+border-radius:50px;
+
+background:#12305e;
+
+margin-bottom:20px;
+
+font-size:14px;
+
+color:#8fb9ff;
+
+}
+
+</style>
+
+<section class="games-section">
+
+<h2 class="section-title">
+
+Featured Games
+
+</h2>
+
+<p class="section-subtitle">
+
+Discover games created by student developers.
+
+</p>
+
+<div class="games-grid">
+
+<div class="game-card">
+
+<div class="game-image">
+
+GAME PREVIEW
+
+</div>
+
+<div class="game-content">
+
+<div class="badge">
+
+Featured Game
+
+</div>
+
+<h3 class="game-title">
+
+Lemonoid Invasion
+
+</h3>
+
+<p class="game-description">
+
+A fast-paced arcade shooter where you defend the galaxy against invading lemons.
+Unlock upgrades, survive increasingly difficult waves, and aim for the highest score.
+
+</p>
+
+<div class="info">
+
+<div class="info-box">
+
+<div class="label">
+
+Developer
+
+</div>
+
+<div class="value">
+
+Rohan_Playz_Scratch
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<div class="label">
+
+Genre
+
+</div>
+
+<div class="value">
+
+Arcade Shooter
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<div class="label">
+
+Difficulty
+
+</div>
+
+<div class="value">
+
+Medium
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<div class="label">
+
+Version
+
+</div>
+
+<div class="value">
+
+1.0
+
+</div>
+
+</div>
+
+</div>
+
+<a class="play-button" href="Lemonoid Invasion (From Scratch).html">
+
+View Game
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
