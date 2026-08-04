@@ -1,37 +1,448 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>Math Challenge</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Classroom Games</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#edf4ff;
+color:#333;
+}
+
+header{
+background:linear-gradient(90deg,#2878ff,#00b7ff);
+color:white;
+padding:60px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:55px;
+margin:0;
+}
+
+header p{
+font-size:22px;
+}
+
+nav{
+background:#1b4ea7;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:20px;
+font-weight:bold;
+font-size:18px;
+}
+
+nav a:hover{
+color:gold;
+}
+
+section{
+padding:50px;
+max-width:1200px;
+margin:auto;
+}
+
+.hero{
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0px 10px 25px rgba(0,0,0,.15);
+}
+
+.hero h2{
+font-size:38px;
+margin-top:0;
+}
+
+.games{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+
+}
+
+.card{
+
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0px 10px 20px rgba(0,0,0,.15);
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+
+}
+
+.card-content{
+
+padding:20px;
+
+}
+
+.card h3{
+
+margin-top:0;
+font-size:30px;
+
+}
+
+.button{
+
+display:inline-block;
+padding:12px 25px;
+background:#2878ff;
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin-top:15px;
+font-weight:bold;
+
+}
+
+.button:hover{
+
+background:#1255c7;
+
+}
+
+.stats{
+
+display:flex;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+text-align:center;
+
+}
+
+.stat{
+
+background:white;
+padding:25px;
+width:220px;
+border-radius:15px;
+box-shadow:0px 5px 15px rgba(0,0,0,.1);
+
+}
+
+.submit{
+
+background:white;
+border-left:8px solid #2878ff;
+padding:30px;
+border-radius:15px;
+}
+
+footer{
+
+background:#1b4ea7;
+color:white;
+padding:40px;
+margin-top:70px;
+
+}
+
+footer a{
+
+color:white;
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1>Lemonoid Invasion</h1>
+<header>
 
-<h2>About this game</h2>
+<h1>🎮 Classroom Games</h1>
+
+<p>Games created by students, for students.</p>
+
+</header>
+
+<nav>
+
+<a href="#about">About</a>
+
+<a href="#games">Games</a>
+
+<a href="#submit">Submit</a>
+
+<a href="#future">Future</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<section id="about">
+
+<div class="hero">
+
+<h2>Welcome!</h2>
 
 <p>
-*Added later*
-</p>
 
-<h2>Created by</h2>
+Welcome to <b>Classroom Games</b>, a collection of educational and fun games
+made by students from around the world.
+
+Whether you're interested in coding, designing games, or simply having fun,
+this is the place to explore projects built by young creators.
+
+</p>
 
 <p>
-Rohan_PLayz_Scratch
+
+Our mission is to inspire creativity and help students learn programming
+through making games.
+
 </p>
 
-<h2>Difficulty</h2>
+</div>
+
+</section>
+
+<section id="games">
+
+<h2>⭐ Featured Games</h2>
+
+<div class="games">
+
+<div class="card">
+
+<img src="images/lemonoid-preview.png">
+
+<div class="card-content">
+
+<h3>🍋 Lemonoid Invasion</h3>
 
 <p>
-1/5
+
+Battle invading lemons from outer space in this exciting arcade shooter.
+Collect upgrades, survive waves, and achieve the highest score possible.
+
 </p>
 
+<p>
 
-<a href="Lemonoid Invasion (From Scratch).html">
-<button>▶ Play Game</button>
+<b>Creator:</b> Rohan_Playz_Scratch
+
+</p>
+
+<p>
+
+<b>Genre:</b> Arcade Shooter
+
+</p>
+
+<p>
+
+<b>Difficulty:</b> ⭐⭐⭐☆☆
+
+</p>
+
+<a class="button" href="Lemonoid Invasion (From Scratch).html">
+
+▶ View Game
+
 </a>
 
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>📈 Website Statistics</h2>
+
+<div class="stats">
+
+<div class="stat">
+
+<h1>1</h1>
+
+Games
+
+</div>
+
+<div class="stat">
+
+<h1>1</h1>
+
+Developers
+
+</div>
+
+<div class="stat">
+
+<h1>∞</h1>
+
+Future Ideas
+
+</div>
+
+</div>
+
+</section>
+
+<section id="submit">
+
+<div class="submit">
+
+<h2>👨‍💻 Want Your Game Here?</h2>
+
+<p>
+
+Anyone can submit a game!
+
+</p>
+
+<ol>
+
+<li>Create your game in Scratch, HTML, JavaScript, Python (compiled for web), or another web-compatible format.</li>
+
+<li>Export it as HTML if needed.</li>
+
+<li>Send the game and preview image to the Classroom Games team.</li>
+
+<li>We'll review it and add it to the website.</li>
+
+</ol>
+
+<p>
+
+Every published game includes:
+
+</p>
+
+<ul>
+
+<li>🎮 Game page</li>
+
+<li>👤 Creator credit</li>
+
+<li>🖼 Preview image</li>
+
+<li>📝 Description</li>
+
+<li>⭐ Difficulty rating</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="future">
+
+<h2>🚀 Coming Soon</h2>
+
+<ul>
+
+<li>🔎 Search games</li>
+
+<li>🏆 Leaderboards</li>
+
+<li>⭐ Ratings</li>
+
+<li>❤️ Favorite games</li>
+
+<li>🎨 Themes</li>
+
+<li>🕹 Categories</li>
+
+<li>👤 Creator profiles</li>
+
+<li>🏅 Game of the Month</li>
+
+<li>📱 Mobile-friendly improvements</li>
+
+</ul>
+
+</section>
+
+<section id="contact">
+
+<h2>📬 Contact</h2>
+
+<p>
+
+Questions? Ideas? Want to submit a game?
+
+</p>
+
+<p>
+
+Check back soon for submission instructions.
+
+</p>
+
+</section>
+
+<footer>
+
+<h2>🎮 Classroom Games</h2>
+
+<p>
+
+Creating the next generation of student game developers.
+
+</p>
+
+<hr>
+
+<p>
+
+© 2026 Classroom Games
+
+</p>
+
+<p>
+
+Made with ❤️ by student developers.
+
+</p>
+
+</footer>
 
 </body>
+
 </html>
