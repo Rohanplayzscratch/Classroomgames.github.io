@@ -1,1 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lemonoid Invasion | Classroom Games</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Space Grotesk',sans-serif;
+background:#020617;
+color:white;
+
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+background-image:
+
+radial-gradient(white 1px,transparent 1px),
+
+radial-gradient(#5da8ff 1px,transparent 1px);
+
+background-size:140px 140px,220px 220px;
+
+opacity:.35;
+
+z-index:-1;
+
+}
+
+header{
+
+padding:80px 10%;
+
+background:
+
+linear-gradient(to right,#07142b,#0b2348);
+
+}
+
+header h1{
+
+font-size:60px;
+
+margin-bottom:15px;
+
+}
+
+header p{
+
+font-size:22px;
+
+color:#b5caea;
+
+}
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:60px 10%;
+
+}
+
+.banner{
+
+height:420px;
+
+border-radius:20px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#12386d,#081120);
+
+border:1px solid rgba(255,255,255,.08);
+
+font-size:36px;
+
+color:#7fb8ff;
+
+margin-bottom:40px;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:35px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:18px;
+
+padding:30px;
+
+backdrop-filter:blur(10px);
+
+}
+
+.card h2{
+
+margin-bottom:20px;
+
+font-size:30px;
+
+}
+
+.card p{
+
+line-height:1.9;
+
+color:#d5e3f7;
+
+}
+
+.info{
+
+display:grid;
+
+gap:15px;
+
+}
+
+.info-box{
+
+background:rgba(255,255,255,.05);
+
+padding:18px;
+
+border-radius:12px;
+
+}
+
+.label{
+
+font-size:13px;
+
+text-transform:uppercase;
+
+color:#8db6ff;
+
+margin-bottom:6px;
+
+}
+
+.value{
+
+font-size:18px;
+
+}
+
+.play{
+
+display:inline-block;
+
+margin-top:30px;
+
+padding:18px 40px;
+
+background:#2563eb;
+
+border-radius:12px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.play:hover{
+
+background:#3b82f6;
+
+}
+
+.back{
+
+display:inline-block;
+
+margin-top:20px;
+
+color:#8db6ff;
+
+text-decoration:none;
+
+}
+
+footer{
+
+margin-top:80px;
+
+padding:40px;
+
+text-align:center;
+
+background:#07142b;
+
+color:#8aa7d6;
+
+}
+
+@media(max-width:900px){
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+header h1{
+
+font-size:42px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Lemonoid Invasion</h1>
+
+<p>
+
+Defend the galaxy against waves of invading lemons.
+
+</p>
+
+</header>
+
+<div class="container">
+
+<div class="banner">
+
+GAME SCREENSHOT COMING SOON
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h2>About the Game</h2>
+
+<p>
+
+Lemonoid Invasion is a fast-paced arcade shooter created by
+Rohan_Playz_Scratch.
+
+Players battle endless waves of space lemons while collecting
+power-ups and surviving increasingly difficult attacks.
+
+The game focuses on quick reflexes, strategic movement,
+and high-score competition.
+
+</p>
+
+<a class="play" href="lemonoid-game.html">
+
+Play Game
+
+</a>
+
+<br>
+
+<a class="back" href="index.html">
+
+← Back to Homepage
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>Game Information</h2>
+
+<div class="info">
+
+<div class="info-box">
+
+<div class="label">
+
+Developer
+
+</div>
+
+<div class="value">
+
+Rohan_Playz_Scratch
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<div class="label">
+
+Genre
+
+</div>
+
+<div class="value">
+
+Arcade Shooter
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<div class="label">
+
+Players
+
+</div>
+
+<div class="value">
+
+Single Player
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<div class="label">
+
+Difficulty
+
+</div>
+
+<div class="value">
+
+Medium
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<div class="label">
+
+Version
+
+</div>
+
+<div class="value">
+
+1.0
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<div class="label">
+
+Engine
+
+</div>
+
+<div class="value">
+
+Scratch / HTML
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+Classroom Games © 2026
+
+</footer>
+
+</body>
+
+</html>
