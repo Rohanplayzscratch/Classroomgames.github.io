@@ -8,10 +8,13 @@
 
 <title>Lemonoid Invasion | Classroom Games</title>
 
+<link rel="icon" type="image/png" href="logo.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 
 <style>
 
@@ -21,6 +24,7 @@ padding:0;
 box-sizing:border-box;
 }
 
+
 body{
 
 font-family:'Space Grotesk',sans-serif;
@@ -29,6 +33,9 @@ color:white;
 
 }
 
+
+/* Space stars */
+
 body::before{
 
 content:"";
@@ -36,16 +43,17 @@ content:"";
 position:fixed;
 
 width:100%;
-
 height:100%;
 
 background-image:
 
 radial-gradient(white 1px,transparent 1px),
-
 radial-gradient(#5da8ff 1px,transparent 1px);
 
-background-size:140px 140px,220px 220px;
+background-size:
+
+140px 140px,
+220px 220px;
 
 opacity:.35;
 
@@ -53,31 +61,41 @@ z-index:-1;
 
 }
 
+
+/* Header */
+
 header{
 
-padding:80px 10%;
+padding:90px 10%;
 
 background:
 
-linear-gradient(to right,#07142b,#0b2348);
+linear-gradient(
+90deg,
+#07142b,
+#0b2348
+);
 
 }
+
 
 header h1{
 
 font-size:60px;
-
 margin-bottom:15px;
 
 }
 
+
 header p{
 
 font-size:22px;
-
 color:#b5caea;
 
 }
+
+
+/* Main */
 
 .container{
 
@@ -88,6 +106,9 @@ margin:auto;
 padding:60px 10%;
 
 }
+
+
+/* Game image */
 
 .banner{
 
@@ -101,17 +122,42 @@ justify-content:center;
 
 align-items:center;
 
-background:linear-gradient(135deg,#12386d,#081120);
+background:
 
-border:1px solid rgba(255,255,255,.08);
+linear-gradient(
+135deg,
+#12386d,
+#081120
+);
 
-font-size:36px;
+border:1px solid rgba(255,255,255,.1);
+
+font-size:35px;
 
 color:#7fb8ff;
 
 margin-bottom:40px;
 
+overflow:hidden;
+
+box-shadow:
+
+0 0 40px rgba(37,99,235,.2);
+
 }
+
+
+.banner img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+/* Layout */
 
 .grid{
 
@@ -123,27 +169,43 @@ gap:35px;
 
 }
 
+
+/* Cards */
+
 .card{
 
-background:rgba(255,255,255,.05);
+background:
 
-border:1px solid rgba(255,255,255,.08);
+rgba(255,255,255,.05);
+
+border:
+
+1px solid rgba(255,255,255,.08);
 
 border-radius:18px;
 
 padding:30px;
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 
 }
+
+
+.card:hover{
+
+border-color:#3b82f6;
+
+}
+
 
 .card h2{
 
-margin-bottom:20px;
-
 font-size:30px;
 
+margin-bottom:20px;
+
 }
+
 
 .card p{
 
@@ -153,6 +215,9 @@ color:#d5e3f7;
 
 }
 
+
+/* Info boxes */
+
 .info{
 
 display:grid;
@@ -161,15 +226,19 @@ gap:15px;
 
 }
 
+
 .info-box{
 
-background:rgba(255,255,255,.05);
+background:
+
+rgba(255,255,255,.05);
 
 padding:18px;
 
 border-radius:12px;
 
 }
+
 
 .label{
 
@@ -183,11 +252,15 @@ margin-bottom:6px;
 
 }
 
+
 .value{
 
 font-size:18px;
 
 }
+
+
+/* Buttons */
 
 .play{
 
@@ -195,7 +268,7 @@ display:inline-block;
 
 margin-top:30px;
 
-padding:18px 40px;
+padding:18px 45px;
 
 background:#2563eb;
 
@@ -211,11 +284,15 @@ transition:.3s;
 
 }
 
+
 .play:hover{
 
 background:#3b82f6;
 
+transform:translateY(-5px);
+
 }
+
 
 .back{
 
@@ -228,6 +305,24 @@ color:#8db6ff;
 text-decoration:none;
 
 }
+
+
+/* Controls */
+
+ul{
+
+margin-top:15px;
+
+margin-left:20px;
+
+line-height:2;
+
+color:#d5e3f7;
+
+}
+
+
+/* Footer */
 
 footer{
 
@@ -243,6 +338,10 @@ color:#8aa7d6;
 
 }
 
+
+
+/* Mobile */
+
 @media(max-width:900px){
 
 .grid{
@@ -251,33 +350,46 @@ grid-template-columns:1fr;
 
 }
 
+
 header h1{
 
 font-size:42px;
 
 }
 
+
+.banner{
+
+height:250px;
+
 }
+
+}
+
 
 </style>
 
+
 </head>
 
+
 <body>
+
 
 <header>
 
 <h1>Lemonoid Invasion</h1>
 
 <p>
-
 Defend the galaxy against waves of invading lemons.
-
 </p>
 
 </header>
 
+
+
 <div class="container">
+
 
 <div class="banner">
 
@@ -285,11 +397,22 @@ GAME SCREENSHOT COMING SOON
 
 </div>
 
+
+
+
 <div class="grid">
+
+
+
+<div>
+
+
 
 <div class="card">
 
+
 <h2>About the Game</h2>
+
 
 <p>
 
@@ -299,18 +422,22 @@ Rohan_Playz_Scratch.
 Players battle endless waves of space lemons while collecting
 power-ups and surviving increasingly difficult attacks.
 
-The game focuses on quick reflexes, strategic movement,
-and high-score competition.
+The goal is simple:
+survive as long as possible and achieve the highest score.
 
 </p>
 
-<a class="play" href="lemonoid-Invasion.html">
+
+
+<a class="play" href="Lemonoid Invasion (From Scratch).html">
 
 Play Game
 
 </a>
 
+
 <br>
+
 
 <a class="back" href="index.html">
 
@@ -318,123 +445,213 @@ Play Game
 
 </a>
 
+
 </div>
+
+
+
+
+<br>
+
+
 
 <div class="card">
 
+
+<h2>Controls</h2>
+
+
+<ul>
+
+<li>Arrow Keys / WASD - Move</li>
+
+<li>Space - Shoot</li>
+
+<li>P - Pause Game</li>
+
+<li>Mouse - Navigate menus</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+<br>
+
+
+
+<div class="card">
+
+
+<h2>Release Information</h2>
+
+
+<p>
+
+Release Date: August 2026
+
+<br><br>
+
+Platform: Web Browser
+
+<br><br>
+
+Status: Available
+
+<br><br>
+
+Version: 1.0
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div>
+
+
+<div class="card">
+
+
 <h2>Game Information</h2>
+
+
 
 <div class="info">
 
+
 <div class="info-box">
 
 <div class="label">
-
 Developer
-
 </div>
 
 <div class="value">
-
 Rohan_Playz_Scratch
-
 </div>
 
 </div>
+
+
 
 <div class="info-box">
 
 <div class="label">
-
 Genre
-
 </div>
 
 <div class="value">
-
 Arcade Shooter
-
 </div>
 
 </div>
+
+
 
 <div class="info-box">
 
 <div class="label">
-
 Players
-
 </div>
 
 <div class="value">
-
 Single Player
-
 </div>
 
 </div>
+
+
 
 <div class="info-box">
 
 <div class="label">
-
 Difficulty
-
 </div>
 
 <div class="value">
-
 Medium
-
 </div>
 
 </div>
+
+
 
 <div class="info-box">
 
 <div class="label">
-
-Version
-
-</div>
-
-<div class="value">
-
-1.0
-
-</div>
-
-</div>
-
-<div class="info-box">
-
-<div class="label">
-
 Engine
-
 </div>
 
 <div class="value">
-
 Scratch / HTML
-
 </div>
 
 </div>
 
+
+
+<div class="info-box">
+
+<div class="label">
+Game Status
+</div>
+
+<div class="value">
+Playable
 </div>
 
 </div>
 
-</div>
 
 </div>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
 
 <footer>
 
-Classroom Games © 2026
+<h2>Classroom Games</h2>
+
+<p>
+
+Student-created games for everyone.
+
+</p>
+
+<br>
+
+<p>
+
+© 2026 Classroom Games
+
+</p>
+
 
 </footer>
+
+
 
 </body>
 
