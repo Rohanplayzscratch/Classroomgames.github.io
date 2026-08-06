@@ -8,6 +8,9 @@
 
 <title>Classroom Games</title>
 
+<meta name="description" content="Classroom Games is a platform where students create, share, and play games.">
+<meta name="theme-color" content="#2563eb">
+
 <link rel="icon" type="image/png" href="logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +21,10 @@
 
 <style>
 
+/* =========================
+   RESET
+========================= */
+
 *{
 margin:0;
 padding:0;
@@ -26,21 +33,60 @@ box-sizing:border-box;
 
 
 html{
+
 scroll-behavior:smooth;
+
 }
 
 
 body{
 
 font-family:'Space Grotesk',sans-serif;
+
 background:#020617;
+
 color:white;
+
 overflow-x:hidden;
+
+line-height:1.6;
 
 }
 
 
-/* STAR BACKGROUND */
+/* =========================
+   SCROLLBAR
+========================= */
+
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+background:#020617;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+background:#2563eb;
+
+border-radius:20px;
+
+}
+
+
+
+/* =========================
+   STAR BACKGROUND
+========================= */
+
 
 body::before{
 
@@ -48,26 +94,22 @@ content:"";
 
 position:fixed;
 
-top:0;
-left:0;
-
-width:100%;
-height:100%;
+inset:0;
 
 background-image:
 
 radial-gradient(white 1px,transparent 1px),
-radial-gradient(#8ab4ff 1px,transparent 1px),
+radial-gradient(#60a5fa 1px,transparent 1px),
 radial-gradient(white 2px,transparent 2px);
 
 background-size:
 
 120px 120px,
 180px 180px,
-250px 250px;
+260px 260px;
 
 
-opacity:.45;
+opacity:.4;
 
 z-index:-1;
 
@@ -76,20 +118,28 @@ animation:stars 180s linear infinite;
 }
 
 
+
 @keyframes stars{
 
 from{
+
 transform:translateY(0);
+
 }
 
 to{
+
 transform:translateY(-600px);
-}
 
 }
 
+}
 
-/* NAVIGATION */
+
+
+/* =========================
+   NAVIGATION
+========================= */
 
 
 nav{
@@ -98,48 +148,78 @@ position:fixed;
 
 top:0;
 
+left:0;
+
 width:100%;
 
-padding:22px 10%;
+
+padding:20px 8%;
+
 
 display:flex;
 
-justify-content:space-between;
-
 align-items:center;
 
+justify-content:space-between;
 
-background:rgba(0,0,0,.35);
 
-backdrop-filter:blur(14px);
+background:rgba(2,6,23,.75);
+
+backdrop-filter:blur(16px);
+
 
 border-bottom:1px solid rgba(255,255,255,.08);
 
-z-index:100;
+
+z-index:1000;
 
 }
+
 
 
 .logo{
 
-font-size:28px;
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+
+font-size:26px;
 
 font-weight:700;
 
-letter-spacing:2px;
+letter-spacing:1px;
 
 }
+
+
+
+.logo img{
+
+width:45px;
+
+height:45px;
+
+border-radius:12px;
+
+object-fit:cover;
+
+}
+
 
 
 nav ul{
 
 display:flex;
 
-list-style:none;
-
 gap:35px;
 
+list-style:none;
+
 }
+
 
 
 nav a{
@@ -148,87 +228,62 @@ color:white;
 
 text-decoration:none;
 
+font-weight:500;
+
+position:relative;
+
 transition:.3s;
 
 }
 
 
+
 nav a:hover{
 
-color:#5ab0ff;
+color:#60a5fa;
 
 }
 
 
-/* HERO */
 
+nav a::after{
 
-.hero{
+content:"";
 
-height:100vh;
+position:absolute;
 
-display:flex;
+left:0;
 
-justify-content:center;
+bottom:-8px;
 
-align-items:center;
+height:2px;
 
-text-align:center;
+width:0;
 
-padding:40px;
+background:#60a5fa;
 
-
-background:
-
-radial-gradient(circle at top,#163d7a 0%,transparent 45%),
-linear-gradient(#020617,#000814);
+transition:.3s;
 
 }
 
 
-.hero-content{
 
-max-width:850px;
+nav a:hover::after{
 
-}
-
-
-.hero h1{
-
-font-size:72px;
-
-margin-bottom:25px;
+width:100%;
 
 }
 
 
-.hero p{
 
-font-size:22px;
-
-line-height:1.8;
-
-color:#d7e3ff;
-
-margin-bottom:45px;
-
-}
-
-
-.buttons{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-}
+/* =========================
+   GLOBAL BUTTONS
+========================= */
 
 
 .btn{
+
+display:inline-block;
 
 padding:18px 40px;
 
@@ -243,6 +298,7 @@ transition:.3s;
 }
 
 
+
 .primary{
 
 background:#2563eb;
@@ -252,13 +308,17 @@ color:white;
 }
 
 
+
 .primary:hover{
 
 background:#3b82f6;
 
 transform:translateY(-5px);
 
+box-shadow:0 15px 35px rgba(37,99,235,.35);
+
 }
+
 
 
 .secondary{
@@ -270,6 +330,7 @@ color:white;
 }
 
 
+
 .secondary:hover{
 
 background:#2563eb;
@@ -279,230 +340,49 @@ transform:translateY(-5px);
 }
 
 
-/* GAMES */
 
-
-.games-section{
-
-padding:100px 10%;
-
-background:linear-gradient(#000814,#07142b);
-
-}
-
-
-.section-title{
-
-font-size:42px;
-
-margin-bottom:10px;
-
-}
-
-
-.section-subtitle{
-
-color:#9db5d9;
-
-margin-bottom:50px;
-
-}
-
-
-.games-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
-
-gap:40px;
-
-}
-
-
-.game-card{
-
-background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:20px;
-
-overflow:hidden;
-
-backdrop-filter:blur(12px);
-
-transition:.35s;
-
-}
-
-
-.game-card:hover{
-
-transform:translateY(-10px);
-
-border-color:#4da3ff;
-
-box-shadow:0 0 35px rgba(70,140,255,.4);
-
-}
-
-
-.game-image{
-
-height:220px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-background:linear-gradient(135deg,#14305f,#08111f);
-
-color:#8fb9ff;
-
-font-size:26px;
-
-}
-
-
-.game-content{
-
-padding:25px;
-
-}
-
-
-.game-title{
-
-font-size:32px;
-
-margin-bottom:15px;
-
-}
-
-
-.game-description{
-
-color:#cdd9ee;
-
-line-height:1.8;
-
-margin-bottom:25px;
-
-}
-
-
-.info{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:15px;
-
-margin-bottom:25px;
-
-}
-
-
-.info-box{
-
-background:rgba(255,255,255,.05);
-
-padding:12px;
-
-border-radius:10px;
-
-}
-
-
-.label{
-
-font-size:12px;
-
-color:#82a5d5;
-
-text-transform:uppercase;
-
-}
-
-
-.value{
-
-font-size:16px;
-
-}
-
-
-.play-button{
-
-display:inline-block;
-
-padding:15px 35px;
-
-background:#2563eb;
-
-border-radius:10px;
-
-text-decoration:none;
-
-color:white;
-
-font-weight:600;
-
-}
-
-
-.play-button:hover{
-
-background:#3b82f6;
-
-}
-
-
-/* FOOTER */
-
-
-footer{
-
-padding:50px;
-
-background:#020617;
-
-text-align:center;
-
-color:#8aa7d6;
-
-}
-
-
-/* MOBILE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 
 @media(max-width:900px){
 
-.hero h1{
 
-font-size:45px;
+nav{
+
+flex-direction:column;
+
+gap:15px;
+
+padding:18px 5%;
 
 }
 
 
 nav ul{
 
-display:none;
+gap:20px;
+
+flex-wrap:wrap;
+
+justify-content:center;
 
 }
 
+
+.logo{
+
+font-size:22px;
+
 }
 
+
+}
 
 </style>
 
 </head>
-
 
 
 <body>
@@ -510,31 +390,43 @@ display:none;
 
 <nav>
 
+
 <div class="logo">
 
-CLASSROOM GAMES
+<img src="logo.png" alt="Classroom Games Logo">
+
+<span>CLASSROOM GAMES</span>
 
 </div>
 
 
+
 <ul>
 
-<li><a href="#">Home</a></li>
+<li>
+<a href="#">Home</a>
+</li>
 
-<li><a href="#games">Games</a></li>
+<li>
+<a href="#games">Games</a>
+</li>
 
-<li><a href="#">Developers</a></li>
+<li>
+<a href="#developers">Developers</a>
+</li>
 
-<li><a href="#">Submit</a></li>
-
-<li><a href="#">About</a></li>
+<li>
+<a href="#about">About</a>
+</li>
 
 </ul>
 
 
 </nav>
 
-
+<!-- =========================
+     HERO SECTION
+========================= -->
 
 
 <section class="hero">
@@ -543,21 +435,34 @@ CLASSROOM GAMES
 <div class="hero-content">
 
 
+<div class="hero-badge">
+
+🎮 Student Created • Community Powered
+
+</div>
+
+
+
 <h1>
 
 Student Games.<br>
 
-Built for Everyone.
+Built For Everyone.
 
 </h1>
 
 
+
 <p>
 
-Classroom Games is a platform where students create,
-share, and discover games made with creativity and technology.
+Classroom Games is a place where students
+create, share, and discover games.
+Explore new ideas, support young developers,
+and play projects made by the next generation
+of creators.
 
 </p>
+
 
 
 <div class="buttons">
@@ -565,16 +470,95 @@ share, and discover games made with creativity and technology.
 
 <a href="#games" class="btn primary">
 
-Browse Games
+🎮 Browse Games
 
 </a>
 
 
-<a href="#" class="btn secondary">
 
-Submit a Game
+<a href="#developers" class="btn secondary">
+
+🚀 Create A Game
 
 </a>
+
+
+</div>
+
+
+
+<div class="stats">
+
+
+<div class="stat-card">
+
+<h2>
+
+50+
+
+</h2>
+
+<p>
+
+Games
+
+</p>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<h2>
+
+30+
+
+</h2>
+
+<p>
+
+Developers
+
+</p>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<h2>
+
+10K+
+
+</h2>
+
+<p>
+
+Players
+
+</p>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<h2>
+
+100%
+
+</h2>
+
+<p>
+
+Free
+
+</p>
+
+</div>
 
 
 </div>
@@ -585,8 +569,9 @@ Submit a Game
 
 </section>
 
-
-
+<!-- =========================
+     GAMES SECTION
+========================= -->
 
 
 <section class="games-section" id="games">
@@ -611,12 +596,17 @@ Discover games created by student developers.
 
 
 
+<!-- GAME CARD 1 -->
+
+
 <div class="game-card">
 
 
 <div class="game-image">
 
-GAME PREVIEW
+
+<img src="logo.png" alt="Lemonoid Invasion Game Preview">
+
 
 </div>
 
@@ -625,87 +615,116 @@ GAME PREVIEW
 <div class="game-content">
 
 
-<h3 class="game-title">
+<span class="game-badge">
+
+⭐ Featured
+
+</span>
+
+
+
+<h3>
 
 Lemonoid Invasion
 
 </h3>
 
 
-<p class="game-description">
 
-A fast-paced arcade shooter where you defend the galaxy
-against invading lemons.
+<p>
+
+A fast-paced arcade shooter where you defend
+the galaxy against invading lemons.
+Survive waves of enemies and compete
+for the highest score.
 
 </p>
 
 
 
-<div class="info">
+<div class="game-info">
 
 
-<div class="info-box">
 
-<div class="label">
+<div>
+
+<span>
+
 Developer
-</div>
 
-<div class="value">
+</span>
+
+<strong>
+
 Rohan_Playz_Scratch
-</div>
+
+</strong>
 
 </div>
 
 
 
-<div class="info-box">
+<div>
 
-<div class="label">
+<span>
+
 Genre
-</div>
 
-<div class="value">
+</span>
+
+<strong>
+
 Arcade Shooter
-</div>
+
+</strong>
 
 </div>
 
 
 
-<div class="info-box">
+<div>
 
-<div class="label">
+<span>
+
 Difficulty
-</div>
 
-<div class="value">
+</span>
+
+<strong>
+
 Medium
-</div>
+
+</strong>
 
 </div>
 
 
 
-<div class="info-box">
+<div>
 
-<div class="label">
+<span>
+
 Version
-</div>
 
-<div class="value">
+</span>
+
+<strong>
+
 1.0
-</div>
+
+</strong>
 
 </div>
 
 
+
 </div>
 
 
 
-<a class="play-button" href="lemonoid-invasion-Game.html">
+<a href="lemonoid-invasion-Game.html" class="play-button">
 
-View Game
+▶ Play Game
 
 </a>
 
@@ -717,195 +736,123 @@ View Game
 </div>
 
 
+
+
+<!-- GAME CARD 2 -->
+
+
+<div class="game-card">
+
+
+<div class="game-image placeholder">
+
+
+🎮
+
 </div>
 
 
-</section>
 
+<div class="game-content">
 
 
+<span class="game-badge">
 
-<!-- ===========================
-DEVELOPER PORTAL
-=========================== -->
+Coming Soon
 
+</span>
 
-<style>
 
-.developer-section{
 
-padding:100px 10%;
+<h3>
 
-background:
+Your Game Here
 
-linear-gradient(
-to bottom,
-#07142b,
-#020617
-);
+</h3>
 
-}
 
 
-.dev-title{
+<p>
 
-font-size:42px;
-
-margin-bottom:15px;
-
-}
-
-
-.dev-subtitle{
-
-color:#9db5d9;
-
-font-size:18px;
-
-margin-bottom:50px;
-
-}
-
-
-.dev-grid{
-
-display:grid;
-
-grid-template-columns:
-
-repeat(auto-fit,minmax(300px,1fr));
-
-gap:30px;
-
-}
-
-
-.dev-card{
-
-background:
-
-rgba(255,255,255,.05);
-
-border:
-
-1px solid rgba(255,255,255,.08);
-
-padding:30px;
-
-border-radius:18px;
-
-transition:.3s;
-
-}
-
-
-.dev-card:hover{
-
-transform:translateY(-8px);
-
-border-color:#4da3ff;
-
-box-shadow:
-
-0 0 30px rgba(50,130,255,.25);
-
-}
-
-
-.dev-card h3{
-
-font-size:25px;
-
-margin-bottom:15px;
-
-color:#8dbaff;
-
-}
-
-
-.dev-card p{
-
-line-height:1.8;
-
-color:#d5e3f7;
-
-}
-
-
-.dev-button{
-
-display:inline-block;
-
-margin-top:40px;
-
-padding:18px 40px;
-
-background:#2563eb;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:12px;
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-
-.dev-button:hover{
-
-background:#3b82f6;
-
-transform:translateY(-5px);
-
-}
-
-
-</style>
-
-
-
-<section class="developer-section">
-
-
-<h2 class="dev-title">
-
-Become a Student Developer
-
-</h2>
-
-
-<p class="dev-subtitle">
-
-Create games, share your ideas, and become part of the Classroom Games community.
+Create your own game and submit it
+to be featured on Classroom Games.
 
 </p>
 
 
 
-<div class="dev-grid">
+<a href="#developers" class="play-button">
+
+Become A Developer
+
+</a>
 
 
 
-<div class="dev-card">
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+<!-- =========================
+     DEVELOPER SECTION
+========================= -->
+
+
+<section class="developer-section" id="developers">
+
+
+<h2 class="section-title">
+
+Become A Student Developer
+
+</h2>
+
+
+
+<p class="section-subtitle">
+
+Create games, share your ideas, and join the Classroom Games community.
+
+</p>
+
+
+
+
+<div class="developer-grid">
+
+
+
+<div class="developer-card">
+
+
+<div class="developer-icon">
+
+💡
+
+</div>
 
 
 <h3>
 
-1. Create Your Game
+Create
 
 </h3>
 
 
 <p>
 
-Build your game using tools like HTML, JavaScript, Scratch, Python,
-or any other technology you enjoy.
-
-Focus on creativity, learning, and making something fun.
+Build games using HTML, CSS, JavaScript,
+Scratch, Python, or any technology you enjoy.
+Turn your ideas into playable experiences.
 
 </p>
 
@@ -915,13 +862,19 @@ Focus on creativity, learning, and making something fun.
 
 
 
+<div class="developer-card">
 
-<div class="dev-card">
+
+<div class="developer-icon">
+
+📦
+
+</div>
 
 
 <h3>
 
-2. Prepare Your Submission
+Prepare
 
 </h3>
 
@@ -932,27 +885,27 @@ Before submitting your game, include:
 
 <br><br>
 
-• Game title
+✔ Game title
 
 <br>
 
-• Description
+✔ Description
 
 <br>
 
-• Developer name
+✔ Developer name
 
 <br>
 
-• Screenshots
+✔ Screenshots
 
 <br>
 
-• Controls
+✔ Controls
 
 <br>
 
-• Version number
+✔ Version number
 
 </p>
 
@@ -962,21 +915,28 @@ Before submitting your game, include:
 
 
 
+<div class="developer-card">
 
-<div class="dev-card">
+
+<div class="developer-icon">
+
+🚀
+
+</div>
 
 
 <h3>
 
-3. Share Your Game
+Publish
 
 </h3>
 
 
 <p>
 
-After your game is reviewed, it can appear on Classroom Games
-for other students to discover and play.
+Share your creation with other students.
+After review, your game can appear
+on Classroom Games.
 
 </p>
 
@@ -985,21 +945,44 @@ for other students to discover and play.
 
 
 
-
 </div>
 
 
 
-<a href="#" class="dev-button">
 
-Submit A Game
+<div class="developer-action">
+
+
+<a href="#" class="submit-button">
+
+Submit Your Game
 
 </a>
 
 
 
+<p>
+
+Have an idea? Start creating today.
+
+</p>
+
+
+</div>
+
+
+
 </section>
-<footer>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+
+<footer id="about">
+
+
+<div class="footer-content">
 
 
 <h2>
@@ -1009,6 +992,7 @@ Classroom Games
 </h2>
 
 
+
 <p>
 
 Student-created games for everyone.
@@ -1016,21 +1000,99 @@ Student-created games for everyone.
 </p>
 
 
-<br>
+
+<div class="footer-links">
 
 
-<p>
+<a href="#">
 
-© 2026 Classroom Games
+Home
+
+</a>
+
+
+<a href="#games">
+
+Games
+
+</a>
+
+
+<a href="#developers">
+
+Developers
+
+</a>
+
+
+</div>
+
+
+
+<p class="copyright">
+
+© 2026 Classroom Games. All rights reserved.
 
 </p>
+
+
+</div>
 
 
 </footer>
 
 
 
-</body>
 
+<!-- BACK TO TOP BUTTON -->
+
+
+<a href="#" class="top-button">
+
+↑
+
+</a>
+
+
+
+
+
+<script>
+
+
+// Back to top button visibility
+
+const topButton = document.querySelector(".top-button");
+
+
+window.addEventListener("scroll", () => {
+
+
+if(window.scrollY > 500){
+
+topButton.style.opacity = "1";
+
+topButton.style.pointerEvents = "auto";
+
+}
+
+else{
+
+topButton.style.opacity = "0";
+
+topButton.style.pointerEvents = "none";
+
+}
+
+
+});
+
+
+
+</script>
+
+
+
+</body>
 
 </html>
